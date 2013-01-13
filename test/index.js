@@ -16,6 +16,33 @@ var expect = Chai.expect;
 
 describe('Cryptiles', function () {
 
+    describe('#randomString', function () {
+
+        it('should generate the right length string', function (done) {
+
+            for (var i = 1; i <= 1000; ++i) {
+                expect(Cryptiles.randomString(i).length).to.equal(i);
+            }
+
+            done();
+        });
+
+        it('returns an error on invalid bits size', function (done) {
+
+            expect(Cryptiles.randomString(99999999999999999999).message).to.equal('Failed generating random bits: Argument #1 must be number > 0');
+            done();
+        });
+    });
+
+    describe('#randomBits', function () {
+
+        it('returns an error on invalid input', function (done) {
+
+            expect(Cryptiles.randomBits(0).message).to.equal('Invalid random bits count');
+            done();
+        });
+    });
+
     describe('#fixedTimeComparison', function () {
 
         var a = Cryptiles.randomString(50000);

@@ -15,6 +15,7 @@
     "node": ">=0.8.0"
   },
   "dependencies": {
+    "boom": "0.0.1"
   },
   "devDependencies": {
     "mocha": "1.x.x",
