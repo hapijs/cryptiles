@@ -1,7 +1,7 @@
 // Load modules
 
 var Chai = require('chai');
-var Cryptiles = process.env.TEST_COV ? require('../lib-cov') : require('../lib');
+var Cryptiles = require('../lib');
 
 
 // Declare internals
@@ -58,7 +58,7 @@ describe('Cryptiles', function () {
             Cryptiles.fixedTimeComparison(b, b);
             var t2 = Date.now() - now;
 
-            expect(t2 - t1).to.be.within(-10, 10);
+            expect(t2 - t1).to.be.within(-20, 20);
             done();
         });
 
