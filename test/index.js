@@ -58,7 +58,7 @@ describe('Cryptiles', function () {
             Cryptiles.fixedTimeComparison(b, b);
             var t2 = Date.now() - now;
 
-            expect(t2 - t1).to.be.within(-2, 2);
+            expect(t2 - t1).to.be.within(-10, 10);
             done();
         });
 
