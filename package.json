@@ -1,7 +1,7 @@
 {
   "name": "cryptiles",
   "description": "General purpose crypto utilities",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "author": "Eran Hammer <eran@hueniverse.com> (http://hueniverse.com)",
   "contributors": [],
   "repository": "git://github.com/hueniverse/cryptiles",
@@ -15,11 +15,10 @@
     "node": ">=0.8.0"
   },
   "dependencies": {
-    "boom": "0.4.x"
+    "boom": "1.0.x"
   },
   "devDependencies": {
-    "lab": "0.1.x",
-    "complexity-report": "0.x.x"
+    "lab": "1.x.x"
   },
   "scripts": {
     "test": "make test-cov"
