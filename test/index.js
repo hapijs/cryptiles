@@ -95,6 +95,12 @@ describe('Cryptiles', function () {
             expect(Cryptiles.fixedTimeComparison('x', null)).to.equal(false);
             done();
         });
+
+        it('should return false when not a string (left)', function (done) {
+
+            expect(Cryptiles.fixedTimeComparison(null, 'x')).to.equal(false);
+            done();
+        });
     });
 });
 
