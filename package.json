@@ -1,8 +1,8 @@
 {
   "name": "cryptiles",
   "description": "General purpose crypto utilities",
-  "version": "2.0.1",
-  "author": "Eran Hammer <eran@hueniverse.com> (http://hueniverse.com)",
+  "version": "2.0.2",
+  "author": "Eran Hammer <eran@hammer.io> (http://hueniverse.com)",
   "contributors": [],
   "repository": "git://github.com/hueniverse/cryptiles",
   "main": "index",
