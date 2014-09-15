@@ -4,7 +4,7 @@
   "version": "2.0.3",
   "author": "Eran Hammer <eran@hammer.io> (http://hueniverse.com)",
   "contributors": [],
-  "repository": "git://github.com/hueniverse/cryptiles",
+  "repository": "git://github.com/hapijs/cryptiles",
   "main": "index",
   "keywords": [
     "cryptography",
@@ -26,7 +26,7 @@
   "licenses": [
     {
       "type": "BSD",
-      "url": "http://github.com/hueniverse/cryptiles/raw/master/LICENSE"
+      "url": "http://github.com/hapijs/cryptiles/raw/master/LICENSE"
     }
   ]
 }
