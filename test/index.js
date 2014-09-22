@@ -12,16 +12,14 @@ var internals = {};
 // Test shortcuts
 
 var lab = exports.lab = Lab.script();
-var before = lab.before;
-var after = lab.after;
 var describe = lab.experiment;
 var it = lab.test;
 var expect = Lab.expect;
 
 
-describe('Cryptiles', function () {
+describe('cryptiles', function () {
 
-    describe('#randomString', function () {
+    describe('randomString()', function () {
 
         it('should generate the right length string', function (done) {
 
@@ -39,7 +37,7 @@ describe('Cryptiles', function () {
         });
     });
 
-    describe('#randomBits', function () {
+    describe('randomBits()', function () {
 
         it('returns an error on invalid input', function (done) {
 
@@ -48,7 +46,7 @@ describe('Cryptiles', function () {
         });
     });
 
-    describe('#fixedTimeComparison', function () {
+    describe('fixedTimeComparison()', function () {
 
         var a = Cryptiles.randomString(50000);
         var b = Cryptiles.randomString(150000);
