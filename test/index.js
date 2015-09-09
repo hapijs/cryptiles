@@ -1,7 +1,8 @@
 // Load modules
 
+var Code = require('code');
+var Cryptiles = require('..');
 var Lab = require('lab');
-var Cryptiles = require('../lib');
 
 
 // Declare internals
@@ -12,9 +13,9 @@ var internals = {};
 // Test shortcuts
 
 var lab = exports.lab = Lab.script();
-var describe = lab.experiment;
-var it = lab.test;
-var expect = Lab.expect;
+var describe = lab.describe;
+var it = lab.it;
+var expect = Code.expect;
 
 
 describe('randomString()', function () {
@@ -30,7 +31,7 @@ describe('randomString()', function () {
 
     it('returns an error on invalid bits size', function (done) {
 
-        expect(Cryptiles.randomString(99999999999999999999).message).to.equal('Failed generating random bits: Argument #1 must be number > 0');
+        expect(Cryptiles.randomString(99999999999999999999).message).to.match(/Failed generating random bits/);
         done();
     });
 });
