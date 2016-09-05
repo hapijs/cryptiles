@@ -38,6 +38,26 @@ describe('randomString()', () => {
     });
 });
 
+describe('randomDigits()', () => {
+
+    it('should generate the right length string', (done) => {
+
+        for (let i = 1; i <= 1000; ++i) {
+            const string = Cryptiles.randomDigits(i);
+            expect(string.length).to.equal(i);
+            expect(string).to.match(/^\d+$/);
+        }
+
+        done();
+    });
+
+    it('returns an error on invalid bits size', (done) => {
+
+        expect(Cryptiles.randomDigits(99999999999999999999).message).to.match(/Failed generating random bits/);
+        done();
+    });
+});
+
 describe('randomBits()', () => {
 
     it('returns an error on invalid input', (done) => {
