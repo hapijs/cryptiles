@@ -22,103 +22,40 @@ const expect = Code.expect;
 
 describe('randomString()', () => {
 
-    it('should generate the right length string', (done) => {
+    it('should generate the right length string', async () => {
 
         for (let i = 1; i <= 1000; ++i) {
             expect(Cryptiles.randomString(i).length).to.equal(i);
         }
-
-        done();
     });
 
-    it('returns an error on invalid bits size', (done) => {
+    it('returns an error on invalid bits size', async () => {
 
-        expect(Cryptiles.randomString(99999999999999999999).message).to.match(/Failed generating random bits/);
-        done();
+        expect(() => Cryptiles.randomString(99999999999999999999)).to.throw(/Failed generating random bits/);
     });
 });
 
 describe('randomDigits()', () => {
 
-    it('should generate the right length string', (done) => {
+    it('should generate the right length string', async () => {
 
         for (let i = 1; i <= 1000; ++i) {
             const string = Cryptiles.randomDigits(i);
             expect(string.length).to.equal(i);
             expect(string).to.match(/^\d+$/);
         }
-
-        done();
     });
 
-    it('returns an error on invalid bits size', (done) => {
+    it('returns an error on invalid bits size', async () => {
 
-        expect(Cryptiles.randomDigits(99999999999999999999).message).to.match(/Failed generating random bits/);
-        done();
+        expect(() => Cryptiles.randomDigits(99999999999999999999)).to.throw(/Failed generating random bits/);
     });
 });
 
 describe('randomBits()', () => {
 
-    it('returns an error on invalid input', (done) => {
+    it('returns an error on invalid input', async () => {
 
-        expect(Cryptiles.randomBits(0).message).to.equal('Invalid random bits count');
-        done();
-    });
-});
-
-describe('fixedTimeComparison()', () => {
-
-    const a = Cryptiles.randomString(50000);
-    const b = Cryptiles.randomString(150000);
-
-    it('should take the same amount of time comparing different string sizes', (done) => {
-
-        let now = Date.now();
-        Cryptiles.fixedTimeComparison(b, a);
-        const t1 = Date.now() - now;
-
-        now = Date.now();
-        Cryptiles.fixedTimeComparison(b, b);
-        const t2 = Date.now() - now;
-
-        expect(t2 - t1).to.be.within(-20, 20);
-        done();
-    });
-
-    it('should return true for equal strings', (done) => {
-
-        expect(Cryptiles.fixedTimeComparison(a, a)).to.equal(true);
-        done();
-    });
-
-    it('should return false for different strings (size, a < b)', (done) => {
-
-        expect(Cryptiles.fixedTimeComparison(a, a + 'x')).to.equal(false);
-        done();
-    });
-
-    it('should return false for different strings (size, a > b)', (done) => {
-
-        expect(Cryptiles.fixedTimeComparison(a + 'x', a)).to.equal(false);
-        done();
-    });
-
-    it('should return false for different strings (size, a = b)', (done) => {
-
-        expect(Cryptiles.fixedTimeComparison(a + 'x', a + 'y')).to.equal(false);
-        done();
-    });
-
-    it('should return false when not a string', (done) => {
-
-        expect(Cryptiles.fixedTimeComparison('x', null)).to.equal(false);
-        done();
-    });
-
-    it('should return false when not a string (left)', (done) => {
-
-        expect(Cryptiles.fixedTimeComparison(null, 'x')).to.equal(false);
-        done();
+        expect(() => Cryptiles.randomBits(0)).to.throw('Invalid random bits count');
     });
 });
