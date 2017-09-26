@@ -1,7 +1,7 @@
 {
   "name": "cryptiles",
   "description": "General purpose crypto utilities",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "repository": "git://github.com/hapijs/cryptiles",
   "main": "lib/index.js",
   "keywords": [
@@ -13,7 +13,7 @@
     "node": ">=8.0.0"
   },
   "dependencies": {
-    "boom": "5.x.x"
+    "boom": "6.x.x"
   },
   "devDependencies": {
     "code": "5.x.x",
