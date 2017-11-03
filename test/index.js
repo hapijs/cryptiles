@@ -57,3 +57,13 @@ describe('randomBits()', () => {
         expect(() => Cryptiles.randomBits(0)).to.throw('Invalid random bits count');
     });
 });
+
+describe('fixedTimeComparison()', () => {
+
+    it('validates strings', () => {
+
+        expect(Cryptiles.fixedTimeComparison('asdasd', 'asdasd')).to.be.true();
+        expect(Cryptiles.fixedTimeComparison('', '')).to.be.true();
+        expect(Cryptiles.fixedTimeComparison('asdas', 'asdasd')).to.be.false();
+    });
+});
