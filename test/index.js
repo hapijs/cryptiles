@@ -14,22 +14,20 @@ const internals = {};
 
 // Test shortcuts
 
-const lab = exports.lab = Lab.script();
-const describe = lab.describe;
-const it = lab.it;
+const { describe, it } = exports.lab = Lab.script();
 const expect = Code.expect;
 
 
 describe('randomString()', () => {
 
-    it('should generate the right length string', async () => {
+    it('should generate the right length string', () => {
 
         for (let i = 1; i <= 1000; ++i) {
             expect(Cryptiles.randomString(i).length).to.equal(i);
         }
     });
 
-    it('returns an error on invalid bits size', async () => {
+    it('returns an error on invalid bits size', () => {
 
         expect(() => Cryptiles.randomString(99999999999999999999)).to.throw(/Failed generating random bits/);
     });
@@ -37,7 +35,7 @@ describe('randomString()', () => {
 
 describe('randomDigits()', () => {
 
-    it('should generate the right length string', async () => {
+    it('should generate the right length string', () => {
 
         for (let i = 1; i <= 1000; ++i) {
             const string = Cryptiles.randomDigits(i);
@@ -46,7 +44,7 @@ describe('randomDigits()', () => {
         }
     });
 
-    it('returns an error on invalid bits size', async () => {
+    it('returns an error on invalid bits size', () => {
 
         expect(() => Cryptiles.randomDigits(99999999999999999999)).to.throw(/Failed generating random bits/);
     });
@@ -54,7 +52,7 @@ describe('randomDigits()', () => {
 
 describe('randomBits()', () => {
 
-    it('returns an error on invalid input', async () => {
+    it('returns an error on invalid input', () => {
 
         expect(() => Cryptiles.randomBits(0)).to.throw('Invalid random bits count');
     });
