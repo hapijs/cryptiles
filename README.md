@@ -5,7 +5,7 @@ General purpose crypto utilities
 
 [![Build Status](https://secure.travis-ci.org/hapijs/cryptiles.png)](http://travis-ci.org/hapijs/cryptiles)
 
-Lead Maintainer - [C J Silverio](https://github.com/ceejbot)
+Lead Maintainer - [Eran Hammer](https://github.com/hueniverse)
 
 ## Methods
 
