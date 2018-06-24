@@ -48,6 +48,18 @@ describe('randomDigits()', () => {
 
         expect(() => Cryptiles.randomDigits(99999999999999999999)).to.throw(/Failed generating random bits/);
     });
+
+    it('generates equal digits distribution', () => {
+
+        const digits = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0 };
+        for (let i = 0; i < 1000000; ++i) {
+            digits[Cryptiles.randomDigits(1)] += 1;
+        }
+
+        for (const digit in digits) {
+            expect(digits[digit]).to.be.between(99000, 101000);
+        }
+    });
 });
 
 describe('randomBits()', () => {
