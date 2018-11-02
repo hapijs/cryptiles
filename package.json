@@ -10,7 +10,7 @@
     "utilites"
   ],
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=6.14.4"
   },
   "dependencies": {
     "boom": "5.x.x"
@@ -20,8 +20,8 @@
     "lab": "13.x.x"
   },
   "scripts": {
-    "test": "lab -a code -t 100 -L",
-    "test-cov-html": "lab -a code -r html -o coverage.html"
+    "test": "lab -a code -t 100 -I SharedArrayBuffer,Atomics -m 5000",
+    "test-cov-html": "lab -a code -I SharedArrayBuffer,Atomics -m 5000 -r html -o coverage.html"
   },
   "license": "BSD-3-Clause"
 }
