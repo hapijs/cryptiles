@@ -20,8 +20,8 @@
     "lab": "13.x.x"
   },
   "scripts": {
-    "test": "lab -a code -t 100 -I SharedArrayBuffer,Atomics -m 5000",
-    "test-cov-html": "lab -a code -I SharedArrayBuffer,Atomics -m 5000 -r html -o coverage.html"
+    "test": "lab -a code -t 100 -I SharedArrayBuffer,Atomics -m 30000",
+    "test-cov-html": "lab -a code -I SharedArrayBuffer,Atomics -m 30000 -r html -o coverage.html"
   },
   "license": "BSD-3-Clause"
 }
