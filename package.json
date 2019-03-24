@@ -1,7 +1,7 @@
 {
   "name": "@commercial/cryptiles",
   "description": "General purpose crypto utilities",
-  "version": "3.1.4",
+  "version": "3.2.0",
   "repository": "git://github.com/hapijs/cryptiles",
   "main": "lib/index.js",
   "keywords": [
