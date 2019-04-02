@@ -1,18 +1,12 @@
 'use strict';
 
-// Load modules
-
-const Code = require('code');
+const Code = require('@hapi/code');
 const Cryptiles = require('..');
-const Lab = require('lab');
+const Lab = require('@hapi/lab');
 
-
-// Declare internals
 
 const internals = {};
 
-
-// Test shortcuts
 
 const { describe, it } = exports.lab = Lab.script();
 const expect = Code.expect;
@@ -67,6 +61,7 @@ describe('randomBits()', () => {
     it('returns an error on invalid input', () => {
 
         expect(() => Cryptiles.randomBits(0)).to.throw('Invalid random bits count');
+        expect(() => Cryptiles.randomBits(-1)).to.throw('Invalid random bits count');
     });
 });
 
