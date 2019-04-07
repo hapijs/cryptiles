@@ -1,10 +1,10 @@
+<a href="http://hapijs.com"><img src="https://github.com/hapijs/assets/blob/master/images/family.svg" width="180px" align="right" /></a>
+
 # cryptiles
 
 General purpose crypto utilities
 
 [![Build Status](https://secure.travis-ci.org/hapijs/cryptiles.png)](http://travis-ci.org/hapijs/cryptiles)
-
-Lead Maintainer - [Eran Hammer](https://github.com/hueniverse)
 
 ## Methods
 
