@@ -4,7 +4,7 @@
 
 General purpose crypto utilities
 
-[![Build Status](https://secure.travis-ci.org/hapijs/cryptiles.png)](http://travis-ci.org/hapijs/cryptiles)
+[![Build Status](https://secure.travis-ci.org/hapijs/cryptiles.png)](http://travis-ci.org/hapijs/cryptiles) [![Greenkeeper badge](https://badges.greenkeeper.io/hapijs/cryptiles.svg)](https://greenkeeper.io/)
 
 ## Methods
 
