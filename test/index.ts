@@ -38,7 +38,7 @@ Cryptiles.randomBits(256);
 Cryptiles.randomBits(5 * 5);
 Cryptiles.randomBits(0);
 
-expect.type<number>(Cryptiles.randomBits(128))
+expect.type<Buffer>(Cryptiles.randomBits(128))
 
 expect.error(Cryptiles.randomBits('some'));
 expect.error(Cryptiles.randomBits(true));

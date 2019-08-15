@@ -29,7 +29,7 @@ export function randomDigits(size: number): string;
 @returns A buffer of random bits
 */
 
-export function randomBits(bits: number): number;
+export function randomBits(bits: number): Buffer;
 
 
 /**
