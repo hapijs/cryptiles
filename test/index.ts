@@ -4,6 +4,7 @@ import * as Lab from '@hapi/lab';
 
 const { expect } = Lab.types;
 
+
 // randomString()
 
 Cryptiles.randomString(256);
@@ -57,11 +58,3 @@ expect.type<boolean>(Cryptiles.fixedTimeComparison("foo", "foo"))
 expect.error(Cryptiles.fixedTimeComparison('foo', 24));
 expect.error(Cryptiles.fixedTimeComparison({ foo: "bar" }, "foo"));
 expect.error(Cryptiles.fixedTimeComparison("foo", "bar", "foo"));
-
-
-
-
-
-
-
-

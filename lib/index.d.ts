@@ -1,4 +1,3 @@
-
 /**
  Generate a cryptographically strong pseudo-random data
 
