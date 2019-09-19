@@ -1,5 +1,5 @@
 /**
- Generate a cryptographically strong pseudo-random data
+Generate a cryptographically strong pseudo-random data
 
 @param size - Size of the string
 
@@ -10,7 +10,7 @@ export function randomString(size: number): string;
 
 
 /**
- Return a random string of digits
+Return a random string of digits
 
 @param size - Size of the digits
 
@@ -21,7 +21,7 @@ export function randomDigits(size: number): string;
 
 
 /**
- Generate a buffer of random bits
+Generate a buffer of random bits
 
 @param bits - Number of bits
 
@@ -32,7 +32,7 @@ export function randomBits(bits: number): Buffer;
 
 
 /**
- Generate a buffer of random bits
+Generate a buffer of random bits
 
 @param a - Data to compare
 @param b - Data to compare
