@@ -9,7 +9,6 @@ const { expect } = Lab.types;
 
 Cryptiles.randomString(256);
 Cryptiles.randomString(5 * 5);
-Cryptiles.randomString(0);
 
 expect.type<string>(Cryptiles.randomString(128))
 
@@ -23,7 +22,6 @@ expect.error(Cryptiles.randomString(128, 256));
 
 Cryptiles.randomDigits(256);
 Cryptiles.randomDigits(5 * 5);
-Cryptiles.randomDigits(0);
 
 expect.type<string>(Cryptiles.randomDigits(128))
 
@@ -37,7 +35,6 @@ expect.error(Cryptiles.randomDigits(128, 256));
 
 Cryptiles.randomBits(256);
 Cryptiles.randomBits(5 * 5);
-Cryptiles.randomBits(0);
 
 expect.type<Buffer>(Cryptiles.randomBits(128))
 
