@@ -10,6 +10,17 @@ export function randomString(size: number): string;
 
 
 /**
+Generate a cryptographically strong pseudo-random alphanumeric data
+
+@param size - Size of the string
+
+@returns A cryptographically strong pseudo-random alphanumeric data
+*/
+
+export function randomAlphanumString(size: number): string;
+
+
+/**
 Return a random string of digits
 
 @param size - Size of the digits

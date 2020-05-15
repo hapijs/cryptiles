@@ -18,6 +18,19 @@ expect.error(Cryptiles.randomString({ foo: true }));
 expect.error(Cryptiles.randomString(128, 256));
 
 
+// randomAlphanumString()
+
+Cryptiles.randomAlphanumString(256);
+Cryptiles.randomAlphanumString(5 * 5);
+
+expect.type<string>(Cryptiles.randomAlphanumString(128))
+
+expect.error(Cryptiles.randomAlphanumString('some'));
+expect.error(Cryptiles.randomAlphanumString(true));
+expect.error(Cryptiles.randomAlphanumString({ foo: true }));
+expect.error(Cryptiles.randomAlphanumString(128, 256));
+
+
 // randomDigits()
 
 Cryptiles.randomDigits(256);

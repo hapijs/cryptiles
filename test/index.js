@@ -27,6 +27,23 @@ describe('randomString()', () => {
     });
 });
 
+describe('randomAlphanumString()', () => {
+
+    it('should generate the right length string', () => {
+
+        for (let i = 1; i <= 1000; ++i) {
+            const string = Cryptiles.randomAlphanumString(i);
+            expect(string.length).to.equal(i);
+            expect(string).to.match(/^[a-zA-Z0-9]+$/);
+        }
+    });
+
+    it('returns an error on invalid bits size', () => {
+
+        expect(() => Cryptiles.randomAlphanumString(99999999999999999999)).to.throw(/Failed generating random bits/);
+    });
+});
+
 describe('randomDigits()', () => {
 
     it('should generate the right length string', () => {
