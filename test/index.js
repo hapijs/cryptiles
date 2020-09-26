@@ -60,7 +60,7 @@ describe('randomDigits()', () => {
         expect(() => Cryptiles.randomDigits(99999999999999999999)).to.throw(/Failed generating random bits/);
     });
 
-    it('generates equal digits distribution', { timeout: 5000 }, () => {
+    it('generates equal digits distribution', { timeout: 10000 }, () => {
 
         const digits = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0 };
         for (let i = 0; i < 1000000; ++i) {
