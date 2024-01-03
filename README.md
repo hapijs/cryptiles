@@ -1,4 +1,4 @@
-# @commercial/cryptiles
+# cryptiles
 
 General purpose crypto utilities
 
