@@ -1,7 +1,7 @@
 {
   "name": "cryptiles",
   "description": "General purpose crypto utilities",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "repository": "git://github.com/hapijs/cryptiles",
   "engines": {
     "node": ">=6.0.0"
