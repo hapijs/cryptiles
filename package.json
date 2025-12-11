@@ -1,7 +1,7 @@
 {
   "name": "@hapi/cryptiles",
   "description": "General purpose crypto utilities",
-  "version": "6.0.2",
+  "version": "6.0.3",
   "repository": "git://github.com/hapijs/cryptiles",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
