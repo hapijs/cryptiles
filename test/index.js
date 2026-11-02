@@ -10,7 +10,7 @@ describe('randomString()', () => {
     });
 
     it('returns an error on invalid bits size', () => {
-        expect(() => Cryptiles.randomString(99999999999999999999)).toThrow(/Failed generating random bits/);
+        expect(() => Cryptiles.randomString(1e20)).toThrow(/Failed generating random bits/);
     });
 });
 
@@ -24,7 +24,7 @@ describe('randomAlphanumString()', () => {
     });
 
     it('returns an error on invalid bits size', () => {
-        expect(() => Cryptiles.randomAlphanumString(99999999999999999999)).toThrow(/Failed generating random bits/);
+        expect(() => Cryptiles.randomAlphanumString(1e20)).toThrow(/Failed generating random bits/);
     });
 });
 
@@ -38,7 +38,7 @@ describe('randomDigits()', () => {
     });
 
     it('returns an error on invalid bits size', () => {
-        expect(() => Cryptiles.randomDigits(99999999999999999999)).toThrow(/Failed generating random bits/);
+        expect(() => Cryptiles.randomDigits(1e20)).toThrow(/Failed generating random bits/);
     });
 
     it('generates equal digits distribution', { timeout: 30000 }, () => {

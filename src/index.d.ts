@@ -37,11 +37,12 @@ export function randomDigits(size: number): string;
 export function randomBits(bits: number): Buffer;
 
 /**
- * Generate a buffer of random bits
+ * Compare two values without leaking where they differ. Equal-length inputs compare in constant time; a length mismatch
+ * returns false early, so length is observable.
  *
  * @param a - Data to compare
  * @param b - Data to compare
- * @returns A boolean comparing a and b
+ * @returns True if a and b hold the same bytes, false otherwise
  */
 
 export function fixedTimeComparison(a: string | Array<any>, b: string | Array<any>): boolean;

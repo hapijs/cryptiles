@@ -5,9 +5,9 @@ import * as Boom from '@hapi/boom';
 // Generate a cryptographically strong pseudo-random data
 
 export function randomString(size) {
-    const buffer = randomBits((size + 1) * 6);
-    const string = buffer.toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/\=/g, '');
-    return string.slice(0, size);
+    return randomBits((size + 1) * 6)
+        .toString('base64url')
+        .slice(0, size);
 }
 
 // Generate a cryptographically strong pseudo-random alphanum data
