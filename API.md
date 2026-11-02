@@ -1,7 +1,4 @@
-
-
 ## Methods
-
 
 ### `randomString(size: number): string`
 
