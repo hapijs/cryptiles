@@ -1,7 +1,4 @@
-
-
 ## Methods
-
 
 ### `randomString(size: number): string`
 
@@ -19,6 +16,6 @@ Returns a cryptographically strong pseudo-random data string consisting of only 
 
 Returns a Buffer of cryptographically strong pseudo-random bits. Takes a bits argument for the number of bits to generate.
 
-### `fixedTimeComparison(a: string, b: string): boolean`
+### `fixedTimeComparison(a: string | Array<any>, b: string | Array<any>): boolean`
 
-Performs a constant-time comparison of two strings to prevent timing attacks. Returns `true` if the strings are equal, `false` otherwise. Safe to use with strings of different lengths.
+Compares two strings or byte arrays to prevent timing attacks. Returns `true` if they hold the same bytes, `false` otherwise. Inputs of equal length compare in constant time. A length mismatch returns `false` early, so the length of an input is observable.

@@ -1,50 +1,39 @@
-'use strict';
+import * as Crypto from 'node:crypto';
 
-const Crypto = require('crypto');
-
-const Boom = require('@hapi/boom');
-
-
-const internals = {};
-
+import * as Boom from '@hapi/boom';
 
 // Generate a cryptographically strong pseudo-random data
 
-exports.randomString = function (size) {
-
-    const buffer = exports.randomBits((size + 1) * 6);
-    const string = buffer.toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/\=/g, '');
-    return string.slice(0, size);
-};
-
+export function randomString(size) {
+    return randomBits((size + 1) * 6)
+        .toString('base64url')
+        .slice(0, size);
+}
 
 // Generate a cryptographically strong pseudo-random alphanum data
 
-exports.randomAlphanumString = function (size) {
-
+export function randomAlphanumString(size) {
     let result = '';
 
     while (result.length < size) {
-        const buffer = exports.randomBits((size + 1) * 6);
+        const buffer = randomBits((size + 1) * 6);
         result += buffer.toString('base64').replace(/[^a-zA-Z0-9]/g, '');
     }
 
     return result.slice(0, size);
-};
-
+}
 
 // Return a random string of digits
 
-exports.randomDigits = function (size) {
-
+export function randomDigits(size) {
     const digits = [];
 
-    let buffer = internals.random(size * 2);            // Provision twice the amount of bytes needed to increase chance of single pass
+    let buffer = random(size * 2); // Provision twice the amount of bytes needed to increase chance of single pass
     let pos = 0;
 
     while (digits.length < size) {
         if (pos >= buffer.length) {
-            buffer = internals.random(size * 2);
+            buffer = random(size * 2);
             pos = 0;
         }
 
@@ -56,41 +45,31 @@ exports.randomDigits = function (size) {
     }
 
     return digits.join('');
-};
-
+}
 
 // Generate a buffer of random bits
 
-exports.randomBits = function (bits) {
-
-    if (!bits ||
-        bits < 0) {
-
+export function randomBits(bits) {
+    if (!bits || bits < 0) {
         throw Boom.internal('Invalid random bits count');
     }
 
     const bytes = Math.ceil(bits / 8);
-    return internals.random(bytes);
-};
+    return random(bytes);
+}
 
-
-exports.fixedTimeComparison = function (a, b) {
-
+export function fixedTimeComparison(a, b) {
     try {
         return Crypto.timingSafeEqual(Buffer.from(a), Buffer.from(b));
-    }
-    catch (err) {
+    } catch {
         return false;
     }
-};
+}
 
-
-internals.random = function (bytes) {
-
+function random(bytes) {
     try {
         return Crypto.randomBytes(bytes);
-    }
-    catch (err) {
+    } catch (err) {
         throw Boom.internal('Failed generating random bits: ' + err.message);
     }
-};
+}
